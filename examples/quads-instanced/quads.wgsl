@@ -41,7 +41,12 @@ fn vertex(vertex: VertexInput) -> VertexOutput {
     out.world_normal = vec3<f32>(0.0, 0.0, 1.0);
 
     out.clip_position = view.view_proj * out.world_position;
-    out.color = unpack4x8unorm(vertex.i_color);
+    out.color = vec4<f32>(
+        f32(vertex.i_color & 0xffu) / 255.0,
+        f32((vertex.i_color >> 8u) & 0xffu) / 255.0,
+        f32((vertex.i_color >> 16u) & 0xffu) / 255.0,
+        f32((vertex.i_color >> 24u) & 0xffu) / 255.0
+    );
     return out;
 }
 
