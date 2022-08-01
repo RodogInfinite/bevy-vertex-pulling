@@ -2,6 +2,28 @@
 
 Vertex pulling is a useful and efficient technique for drawing many quads or cubes by storing per-instance data in a buffer, indexing into it using an index calculated based on the vertex index, and calculating offsets from a world position for the instance based on which vertex of the quad/cube is being processed.
 
+## Running quads-instanced example in the browser
+
+### With [Just](https://crates.io/crates/just)
+#### Step 1
+From the command line and in the directory with the justfile run `just serve` and all of the manual steps noted above will be run in order
+#### Step 2
+Navigate to `http://localhost:3000/generated/quads-instanced.html` in the browser
+
+### Manually from the command line
+
+#### Step 1
+`cargo build --release --target wasm32-unknown-unknown --example quads-instanced`
+#### Step 2
+`wasm-bindgen --out-dir generated --web target/wasm32-unknown-unknown/release/examples/quads-instanced.wasm`
+#### Step 3
+`simple-http-server --port 3000 --nocache`
+#### Step 4
+Navigate to `http://localhost:3000/generated/quads-instanced.html` in the browser
+
+
+
+
 ## Approaches Implemented
 
 - Instance data stored in:
