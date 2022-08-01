@@ -4,13 +4,13 @@ Vertex pulling is a useful and efficient technique for drawing many quads or cub
 
 ## Running quads-instanced example in the browser
 
-### With [Just](https://crates.io/crates/just)
+### With [Just](https://crates.io/crates/just) and [simple-http-server](https://crates.io/crates/simple-http-server)
 #### Step 1
 From the command line and in the directory with the justfile run `just serve` and all of the manual steps noted above will be run in order
 #### Step 2
 Navigate to `http://localhost:3000/generated/quads-instanced.html` in the browser
 
-### Manually from the command line
+### Manually from the command line and with [simple-http-server](https://crates.io/crates/simple-http-server)
 
 #### Step 1
 `cargo build --release --target wasm32-unknown-unknown --example quads-instanced`
