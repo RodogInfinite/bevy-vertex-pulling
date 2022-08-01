@@ -1,3 +1,7 @@
 /.cargo
 /target
 Cargo.lock
+generated/quads-instanced_bg.wasm
+generated/quads-instanced_bg.wasm.d.ts
+generated/quads-instanced.d.ts
+generated/quads-instanced.js
