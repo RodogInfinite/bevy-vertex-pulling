@@ -25,7 +25,7 @@ use bevy::{
         renderer::{RenderContext, RenderDevice, RenderQueue},
         texture::BevyDefault,
         view::{ExtractedView, ViewDepthTexture, ViewTarget, ViewUniform},
-        RenderApp, RenderStage,
+        RenderApp, RenderStage, Extract,
     },
 };
 use bevy_vertex_pulling::Instances;
@@ -102,7 +102,7 @@ fn setup(mut commands: Commands) {
     commands.spawn_bundle((quads,));
 }
 
-fn extract_quads_phase(mut commands: Commands, cameras: Query<Entity, With<Camera3d>>) {
+fn extract_quads_phase(mut commands: Commands, cameras: Extract<Query<Entity, With<Camera3d>>>) {
     for entity in cameras.iter() {
         commands
             .get_or_spawn(entity)
